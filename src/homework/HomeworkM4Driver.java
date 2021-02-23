@@ -95,21 +95,21 @@ public class HomeworkM4Driver {
 		testEquivalentLists(new String[] {"a", "b", "c", "d"}, new String[] {"e", "b", "c", "d"}, false, "same lengths, different first element");
 		testEquivalentLists(new String[] {"a", "b", "c", "d"}, new String[] {"b", "d", "a", "c"}, false, "same lengths, same elements, different order of elements");
 
-//
-//		System.out.println("\n************************************TESTING EXTRA CREDIT AList implementing Comparable************************************");
-//		// parameter 1: the list that will invoke the compareTo method (List A)
-//		// parameter 2: the list passed in as a parameter to the compareTo method (List B)
-//		// parameter 3: the expected result (negative if list A < list B, positive if list A > list B, zero otherwise)
-//		// parameter 4: a description of the test
-//		testComparable(new Integer[] {}, 			 new Integer[] {}, 			   ResultRange.ZERO, "List A and B are empty");
-//		testComparable(new Integer[] {1}, 			 new Integer[] {}, 			   ResultRange.POSITIVE, "List A has more elements");
-//		testComparable(new Integer[] {}, 			 new Integer[] {1}, 		   ResultRange.NEGATIVE, "List A has fewer elements");
-//		testComparable(new Integer[] {1}, 	 		 new Integer[] {1, 2}, 		   ResultRange.NEGATIVE, "List A has fewer elements");
-//		testComparable(new Integer[] {1, 2}, 	 	 new Integer[] {1, 2}, 		   ResultRange.ZERO, "List A and List B are the same size and have the same elements");
-//		testComparable(new Integer[] {1, 2, 3}, 	 new Integer[] {1, 2, 4}, 	   ResultRange.NEGATIVE, "the lists are the same size; for the first non-matching element, the List A element is smaller)");
-//		testComparable(new Integer[] {1, 2, 3}, 	 new Integer[] {1, 2, 3}, 	   ResultRange.ZERO, "List A and List B are the same size and have the same elements");
-//		testComparable(new Integer[] {1, 2, 3, 4}, 	 new Integer[] {1, 2, 3, 2},   ResultRange.POSITIVE, "the lists are the same size; for the first non-matching element, the List A element is bigger");
-//		testComparable(new String[] {"a", "b", "c"}, new String[] {"a", "d", "a"}, ResultRange.NEGATIVE, "the lists are the same size; for the first non-matching element, the List A element is smaller");
+
+		System.out.println("\n************************************TESTING EXTRA CREDIT AList implementing Comparable************************************");
+		// parameter 1: the list that will invoke the compareTo method (List A)
+		// parameter 2: the list passed in as a parameter to the compareTo method (List B)
+		// parameter 3: the expected result (negative if list A < list B, positive if list A > list B, zero otherwise)
+		// parameter 4: a description of the test
+		testComparable(new Integer[] {}, 			 new Integer[] {}, 			   ResultRange.ZERO, "List A and B are empty");
+		testComparable(new Integer[] {1}, 			 new Integer[] {}, 			   ResultRange.POSITIVE, "List A has more elements");
+		testComparable(new Integer[] {}, 			 new Integer[] {1}, 		   ResultRange.NEGATIVE, "List A has fewer elements");
+		testComparable(new Integer[] {1}, 	 		 new Integer[] {1, 2}, 		   ResultRange.NEGATIVE, "List A has fewer elements");
+		testComparable(new Integer[] {1, 2}, 	 	 new Integer[] {1, 2}, 		   ResultRange.ZERO, "List A and List B are the same size and have the same elements");
+		testComparable(new Integer[] {1, 2, 3}, 	 new Integer[] {1, 2, 4}, 	   ResultRange.NEGATIVE, "the lists are the same size; for the first non-matching element, the List A element is smaller)");
+		testComparable(new Integer[] {1, 2, 3}, 	 new Integer[] {1, 2, 3}, 	   ResultRange.ZERO, "List A and List B are the same size and have the same elements");
+		testComparable(new Integer[] {1, 2, 3, 4}, 	 new Integer[] {1, 2, 3, 2},   ResultRange.POSITIVE, "the lists are the same size; for the first non-matching element, the List A element is bigger");
+		testComparable(new String[] {"a", "b", "c"}, new String[] {"a", "d", "a"}, ResultRange.NEGATIVE, "the lists are the same size; for the first non-matching element, the List A element is smaller");
 	}
 	
 	
@@ -257,42 +257,42 @@ public class HomeworkM4Driver {
 		}
 	}
 
-//	public static enum ResultRange {
-//		POSITIVE("invoking List A > parameter List B"), NEGATIVE("invoking List A < parameter List B"), ZERO("the two lists are \"equal\"");
-//
-//		private String text;
-//		private ResultRange(String text) {
-//			this.text = text;
-//		}
-//		public String toString() {
-//			return this.text;
-//		}
-//	}
-//	public static <T extends Comparable<? super T>> void testComparable(T[] listAContents, T[] listBContents, ResultRange expectedResultRange, String testDescription) {
-//		AList<T> listA = new AList<T>(100);
-//		for(T element : listAContents) {
-//			listA.add(element);
-//		}
-//		AList<T> listB = new AList<T>();
-//		for(T element : listBContents) {
-//			listB.add(element);
-//		}
-//		int result = listA.compareTo(listB);
-//		ResultRange resultRange;
-//		if(result<0) {
-//			resultRange = ResultRange.NEGATIVE;
-//		} else if(result>0) {
-//			resultRange = ResultRange.POSITIVE;
-//		} else {
-//			resultRange = ResultRange.ZERO;
-//		}
-//		System.out.println("\nInvoking List A:  " + Arrays.toString(listA.toArray()) + "\nParameter List B: " + Arrays.toString(listB.toArray()));
-//		System.out.println("Expected result = " + expectedResultRange);
-//		System.out.println("Actual result =   " + resultRange);
-//
-//		if(resultRange!=expectedResultRange) {
-//			System.out.println("*****Test failed for: " + testDescription);
-//		}
-//	}
+	public static enum ResultRange {
+		POSITIVE("invoking List A > parameter List B"), NEGATIVE("invoking List A < parameter List B"), ZERO("the two lists are \"equal\"");
+
+		private String text;
+		private ResultRange(String text) {
+			this.text = text;
+		}
+		public String toString() {
+			return this.text;
+		}
+	}
+	public static <T extends Comparable<? super T>> void testComparable(T[] listAContents, T[] listBContents, ResultRange expectedResultRange, String testDescription) {
+		AList<T> listA = new AList<T>(100);
+		for(T element : listAContents) {
+			listA.add(element);
+		}
+		AList<T> listB = new AList<T>();
+		for(T element : listBContents) {
+			listB.add(element);
+		}
+		int result = listA.compareTo(listB);
+		ResultRange resultRange;
+		if(result<0) {
+			resultRange = ResultRange.NEGATIVE;
+		} else if(result>0) {
+			resultRange = ResultRange.POSITIVE;
+		} else {
+			resultRange = ResultRange.ZERO;
+		}
+		System.out.println("\nInvoking List A:  " + Arrays.toString(listA.toArray()) + "\nParameter List B: " + Arrays.toString(listB.toArray()));
+		System.out.println("Expected result = " + expectedResultRange);
+		System.out.println("Actual result =   " + resultRange);
+
+		if(resultRange!=expectedResultRange) {
+			System.out.println("*****Test failed for: " + testDescription);
+		}
+	}
 
 }

@@ -278,8 +278,25 @@ public class AList<T extends Comparable<? super T>> implements ListInterface<T>,
 
 	@Override
 	public int compareTo(AList<T> otherList) {
-		 // YOUR EXTRA CREDIT CODE HERE
-		return 0;
+		checkInitialization();
+
+		if (this.numberOfEntries < otherList.numberOfEntries) {
+			return -1;
+		} else if (this.numberOfEntries > otherList.numberOfEntries) {
+			return 1;
+		} else {
+			if (this.isEmpty()) {
+				return 0;
+			} else {
+				int index = 1;
+
+				while ((index < numberOfEntries) && list[index].equals(otherList.list[index])) {
+					index++;
+				}
+
+				return list[index].compareTo(otherList.list[index]);
+			}
+		}
 	} 
 
 } 
