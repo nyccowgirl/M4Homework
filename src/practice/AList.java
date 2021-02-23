@@ -1,3 +1,5 @@
+package practice;
+
 import java.util.Arrays;
 
 /**
@@ -183,7 +185,7 @@ public class AList<T extends Comparable<? super T>> implements ListInterface<T> 
 	// Throws an exception if this object is corrupt.
 	private void checkIntegrity() {
 		if (!integrityOK) {
-			throw new SecurityException("AList object is corrupt.");
+			throw new SecurityException("practice.AList object is corrupt.");
 		}
 	} 
 

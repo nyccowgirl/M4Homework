@@ -1,3 +1,5 @@
+package practice;
+
 import java.util.Arrays;
 
 /**
@@ -158,8 +160,8 @@ public final class ResizableArrayBag<T> implements BagInterface<T> {
 		return anEntry.equals(result);
 	}
 
-//	public BagInterface<T> getAllLessThan(T anObject) {
-//		ResizableArrayBag<T> lessThanBag = new ResizableArrayBag<>();
+//	public practice.BagInterface<T> getAllLessThan(T anObject) {
+//		practice.ResizableArrayBag<T> lessThanBag = new practice.ResizableArrayBag<>();
 //
 //		for (int i = 0; i < numberOfEntries; i++) {
 //			T currentItemOnList = bag[i];
@@ -234,7 +236,7 @@ public final class ResizableArrayBag<T> implements BagInterface<T> {
 	// Throws an exception if receiving object is not initialized.
 	private void checkintegrity() {
 		if (!integrityOK) {
-			throw new SecurityException("ArrayBag object is corrupt.");
+			throw new SecurityException("practice.ArrayBag object is corrupt.");
 		}
 	} 
 

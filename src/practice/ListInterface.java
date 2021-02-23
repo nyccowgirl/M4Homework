@@ -1,3 +1,5 @@
+package practice;
+
 /** An interface for the ADT list.
     Entries in a list have positions that begin with 1.
     @author Frank M. Carrano
@@ -74,4 +76,4 @@ public interface ListInterface<T>
        @return  True if the list is empty, or false if not. */
    public boolean isEmpty();
 
-} // end ListInterface
+} // end practice.ListInterface

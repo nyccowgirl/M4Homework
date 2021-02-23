@@ -1,3 +1,5 @@
+package practice;
+
 import java.util.Arrays;
 
 public class ArrayBagTester {
@@ -33,8 +35,8 @@ public class ArrayBagTester {
 		numberBag.add(3);
 
 		/*
-		if(numberBag instanceof ArrayBag<?>)
-			System.out.println( ((ArrayBag<Integer>)numberBag).removeRandom() );
+		if(numberBag instanceof practice.ArrayBag<?>)
+			System.out.println( ((practice.ArrayBag<Integer>)numberBag).removeRandom() );
 		 */
 
 		BagInterface<Integer> numberBag2 = new ArrayBag<>();
